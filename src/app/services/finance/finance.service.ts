@@ -1,37 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-
-export interface ISymbols {
-    exchange: string,
-    shortname: string,
-    quoteType: string,
-    symbol: string,
-    index: string,
-    score: number,
-    typeDisp: string,
-    longname: string,
-    exchDisp: string,
-    sector: string,
-    industry: string,
-    dispSecIndFlag: boolean,
-    isYahooFinance: boolean
-}
-
-export interface IChart {
-    list: IChartListItem[];
-    currency: string;
-}
-
-interface IChartListItem {
-    day: number | string;
-    date: number;
-    value: number;
-    swing: {
-        lastDay: string | null;
-        dayOne: string | null;
-    },
-}
+import { IChart, IChartListItem } from '../../interfaces/chart';
+import { ISymbols } from '../../interfaces/symbols';
 
 @Injectable({
     providedIn: 'root',

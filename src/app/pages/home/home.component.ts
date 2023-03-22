@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { FinanceService, IChart, ISymbols } from '../../services/finance/finance.service';
+import { FinanceService } from '../../services/finance/finance.service';
 import { debounceTime, Observable, of, switchMap, tap } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import { IChart } from '../../interfaces/chart';
+import { ISymbols } from '../../interfaces/symbols';
 
 @Component({
     selector: 'app-home',
