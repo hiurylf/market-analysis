@@ -1,0 +1,53 @@
+<header class='d-flex sticky-top px-2 px-md-4 py-2 navbar bg-secondary bg-opacity-50 gap-2 gap-md-5 justify-content-center'>
+    <h5 class='m-0'>Market Analysis</h5>
+
+    <ng-select
+        class='flex-grow-1'
+        (search)='onSearch($event)'
+        [loading]='searchLoading'
+        [formControl]='symbolsControl'
+        [notFoundText]="freeTextSearchControl.value
+                ? 'Nenhum resultado correspondente para: ' + freeTextSearchControl.value
+                : 'Faça uma busca'
+            "
+        placeholder='Procure símbolos ou empresas'
+    >
+        <ng-option
+            *ngFor='let item of symbols$ | async'
+            [value]='item.symbol'
+        >
+            {{item.symbol}} - {{item.longname}}
+        </ng-option>
+    </ng-select>
+
+    <div class="btn-group" role="group">
+        <button
+            type="button"
+            class="btn btn-primary"
+            [ngClass]="{'active': view === 'table'}"
+            (click)="view = 'table'"
+        >
+            Tabela
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            [ngClass]="{'active': view === 'chart'}"
+            (click)="view = 'chart'"
+        >
+            Gráfico
+        </button>
+    </div>
+</header>
+
+<main class='px-2 px-md-4 pb-2'>
+    <section *ngIf='data$ | async as data'>
+
+        <app-table *ngIf="data && view === 'table'; else showChart" [data]='data'></app-table>
+
+        <ng-template #showChart>
+            <app-chart *ngIf='data' [data]='data'></app-chart>
+        </ng-template>
+    </section>
+</main>

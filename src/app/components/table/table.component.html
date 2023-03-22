@@ -1,0 +1,20 @@
+<table class='table table-striped'>
+    <thead>
+    <tr>
+        <th scope="col">Dia</th>
+        <th scope="col">Data</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Variação em relação a D-1</th>
+        <th scope="col">Variação em relação a primeira data</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let item of data.list'>
+        <th scope="row">{{ item.day }}</th>
+        <td>{{ item.date | date: 'dd/MM/yy' }}</td>
+        <td>{{ (item.value | currency: data.currency) || '-' }}</td>
+        <td>{{ item.swing.lastDay ? item.swing.lastDay + '%' : '-' }}</td>
+        <td>{{ item.swing.dayOne ? item.swing.dayOne + '%' : '-' }}</td>
+    </tr>
+    </tbody>
+</table>

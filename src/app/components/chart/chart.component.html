@@ -1,0 +1,14 @@
+<main class='pt-3'>
+    <h6 class='mb-2' *ngIf='currency'>
+        Moeda em: {{currency}}
+    </h6>
+
+    <canvas
+        baseChart
+        [data]="chartData"
+        [options]="{ responsive: true }"
+        [type]="'line'"
+        [legend]='false'
+    >
+    </canvas>
+</main>
