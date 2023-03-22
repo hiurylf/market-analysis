@@ -2,6 +2,10 @@
 
 Project designed to analyze the performance of a stock in the last 30 days
 
+## Prerequisites
+
+To run this project you need to have the Angular framework installed locally, details for the installation visit this link: [setup-local](https://angular.io/guide/setup-local)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
