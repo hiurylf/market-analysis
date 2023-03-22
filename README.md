@@ -18,3 +18,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 [chart.js](https://www.chartjs.org/)
 
 [ng-select](https://github.com/ng-select/ng-select)
+
+## Api
+
+[Yahoo Finance](https://finance.yahoo.com/)
