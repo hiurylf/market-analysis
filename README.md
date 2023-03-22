@@ -8,7 +8,8 @@ To run this project you need to have the Angular framework installed locally, de
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
+1. Run `npm install` to install dependencies.
+2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
 change any of the source files.
 
 ## Build
