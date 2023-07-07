@@ -25,7 +25,7 @@ export class HomeComponent {
         this.onSearchChange();
 
         this.data$ = this.symbolsControl.valueChanges.pipe(
-            switchMap((value?: string) => value ? this.financeService.getLastThirtyDaysChart(value) : of(undefined)),
+            switchMap((text?: string) => text ? this.financeService.getLastThirtyDaysChart(text) : of(undefined)),
         );
     }
 
